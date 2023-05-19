@@ -28,7 +28,7 @@ namespace BusinessLayer.Concrete
 
         }
 
-        public Destination? TGetByID(Guid id)
+        public Destination? TGetByID(int id)
         {
             return _destinationDal.GetById(id);
         }

@@ -28,7 +28,7 @@ namespace BusinessLayer.Concrete
             _aboutDal.Delete(T);
         }
 
-        public About TGetByID(Guid id)
+        public About TGetByID(int id)
         {
             throw new NotImplementedException();
         }

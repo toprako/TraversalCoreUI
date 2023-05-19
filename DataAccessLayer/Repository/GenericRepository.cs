@@ -20,7 +20,7 @@ namespace DataAccessLayer.Repository
             }
         }
 
-        public T? GetById(Guid Id)
+        public T? GetById(int Id)
         {
             using (var context = new Context())
             {

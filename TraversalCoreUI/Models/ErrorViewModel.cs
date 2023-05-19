@@ -1,4 +1,4 @@
-namespace TraversalCoreUI.Models
+namespace TraversalCoreUI.Areas.Member.Models
 {
     public class ErrorViewModel
     {

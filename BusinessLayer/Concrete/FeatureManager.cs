@@ -26,7 +26,7 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public Feature TGetByID(Guid id)
+        public Feature TGetByID(int id)
         {
             throw new NotImplementedException();
         }

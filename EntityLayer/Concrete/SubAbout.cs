@@ -10,7 +10,7 @@ namespace EntityLayer.Concrete
     public class SubAbout
     {
         [Key]
-        public Guid SubAboutID { get; set; }
+        public int SubAboutID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
     }

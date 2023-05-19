@@ -10,7 +10,7 @@ namespace EntityLayer.Concrete
     public class Testimonial
     {
         [Key]
-        public Guid TestimonialID { get; set; }
+        public int TestimonialID { get; set; }
         public string Client { get; set; }
         public string Comment { get; set; }
         public string ClientImage { get; set; }

@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class Context : DbContext
+    public class Context : IdentityDbContext<AppUser, AppRole, int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=MERT-PC;Database=TraversalDb;Trusted_Connection=True;Encrypt=False;");
+            optionsBuilder.UseSqlServer("Server=MERT-PC;Database=SeyahatDb;Trusted_Connection=True;Encrypt=False;");
         }
 
         public DbSet<About> Abouts { get; set; }
@@ -27,6 +28,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<SubAbout> SubAbouts { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<Comment> Comments { get; set; }
-
+        public DbSet<Reservation> Reservations { get; set; }
     }
 }

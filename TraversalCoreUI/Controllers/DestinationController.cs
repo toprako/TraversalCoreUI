@@ -16,7 +16,7 @@ namespace TraversalCoreUI.Controllers
         }
 
         [HttpGet]
-        public IActionResult DestinationDetails(Guid Id)
+        public IActionResult DestinationDetails(int Id)
         {
             ViewBag.DestinationId = Id;
             var destination = destinationManager.TGetByID(Id);
