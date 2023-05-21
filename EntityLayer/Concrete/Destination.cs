@@ -15,7 +15,7 @@ namespace EntityLayer.Concrete
         public string City { get; set; }
 
         public string DayNight { get; set; }
-        
+
         public double Price { get; set; }
 
         public string Image { get; set; }
@@ -27,9 +27,10 @@ namespace EntityLayer.Concrete
         public bool Status { get; set; }
 
         public string CoverImage { get; set; }
-        public string  Details1 { get; set; }
-        public string  Details2 { get; set; }
-        public string  Image2 { get; set; }
-        public List<Comment> Comments{ get; set; }
+        public string Details1 { get; set; }
+        public string Details2 { get; set; }
+        public string Image2 { get; set; }
+        public List<Comment> Comments { get; set; }
+        public List<Reservation> Reservations { get; set; }
     }
 }
