@@ -20,12 +20,12 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Destination T)
         {
-
+            _destinationDal.Insert(T);
         }
 
         public void TDelete(Destination T)
         {
-
+            _destinationDal.Delete(T);
         }
 
         public Destination? TGetByID(int id)
@@ -40,7 +40,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(Destination T)
         {
-            
+            _destinationDal.Update(T);
         }
 
     }
