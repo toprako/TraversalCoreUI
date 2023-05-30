@@ -17,11 +17,13 @@ namespace TraversalCoreUI.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogInformation("Index Sayfası Çağrıldı");
             return View();
         }
 
         public IActionResult Privacy()
         {
+            _logger.LogInformation("Gizlilik Sayfası Çağrıldı");
             return View();
         }
 
