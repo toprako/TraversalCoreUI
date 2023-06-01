@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TraversalCoreUI.Controllers
 {
+    [Area("Admin")]
     public class CommentController : Controller
     {
         readonly CommentManager commentManager = new(new EfCommentDal());
