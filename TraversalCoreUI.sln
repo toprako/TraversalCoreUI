@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{6B6AF35F-7AC5-455D-8B24-DF6F21B4212C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOLayer", "DTOLayer\DTOLayer.csproj", "{B6FE38F9-ADF4-4AD6-869B-AEC2616E5467}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTOLayer", "DTOLayer\DTOLayer.csproj", "{B6FE38F9-ADF4-4AD6-869B-AEC2616E5467}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraversalApi", "TraversalApi\TraversalApi.csproj", "{6D4DA873-DBBC-4E2E-A204-5D2BDF6CAAAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{B6FE38F9-ADF4-4AD6-869B-AEC2616E5467}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6FE38F9-ADF4-4AD6-869B-AEC2616E5467}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6FE38F9-ADF4-4AD6-869B-AEC2616E5467}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D4DA873-DBBC-4E2E-A204-5D2BDF6CAAAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D4DA873-DBBC-4E2E-A204-5D2BDF6CAAAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D4DA873-DBBC-4E2E-A204-5D2BDF6CAAAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D4DA873-DBBC-4E2E-A204-5D2BDF6CAAAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

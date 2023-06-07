@@ -1,0 +1,23 @@
+﻿@model DTOLayer.DTOs.AnnouncementDTOs.AnnouncementAddDto
+@{
+    ViewData["Title"] = "AddAnnouncement";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Duyuru Ekleme Sayfası</h1>
+
+<form method="post">
+    <div class="form-group">
+        @Html.Label("Duyuru Başlığı")
+        @Html.TextBoxFor(x => x.Title, new{@class = "form-control"})
+        @Html.ValidationMessageFor(x => x.Title)
+    </div>
+    <br />
+    <div>
+        @Html.Label("Duyuru İçeriği")
+        @Html.TextBoxFor(x => x.Content, new{@class = "form-control"})
+        @Html.ValidationMessageFor(x => x.Content)
+    </div>    
+    <br />
+    <button class="btn btn-outline-success">Duyuru Oluştur</button>
+</form>

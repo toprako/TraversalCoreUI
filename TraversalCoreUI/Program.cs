@@ -1,10 +1,7 @@
-using BusinessLayer.Abstract;
-using BusinessLayer.Concrete;
 using BusinessLayer.Container;
-using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
-using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -26,13 +23,16 @@ builder.Services.AddLogging(x =>
     x.ClearProviders();
     x.SetMinimumLevel(LogLevel.Debug);
     x.AddDebug();
-}); 
+});
+builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddDefaultTokenProviders();
 //#Baðýmlýlar
 builder.Services.ContainerDependencies();
-
+builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.CustomValidator();
+builder.Services.AddControllersWithViews().AddFluentValidation(); 
 builder.Services.AddMvc(config =>
 {
     var policy = new AuthorizationPolicyBuilder()

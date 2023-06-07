@@ -1,0 +1,27 @@
+﻿@model TraversalCoreUI.Areas.Admin.Models.VisitorViewModel
+@{
+    ViewData["Title"] = "UpdateVisitor";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Api İle Ziyaretçi Güncelleme</h1>
+<br />
+<form method="post">
+    @Html.HiddenFor(x => x.VisitorID)
+    @Html.Label("Ziyaretçi Adı")
+    @Html.TextBoxFor(x => x.Name , new{@class = "form-control"})
+    <br />
+    @Html.Label("Ziyaretçi Soyadı")
+    @Html.TextBoxFor(x => x.Surname , new{@class = "form-control"})
+    <br />
+    @Html.Label("Ziyaretçi Mail Adresi")
+    @Html.TextBoxFor(x => x.Mail , new{@class = "form-control"})
+    <br />
+    @Html.Label("Ziyaretçi Şehri")
+    @Html.TextBoxFor(x => x.City , new{@class = "form-control"})
+    <br />
+    @Html.Label("Ziyaretçi Ülkesi")
+    @Html.TextBoxFor(x => x.Country , new{@class = "form-control"})
+    <br />
+    <button class="btn btn-outline-primary">Ziyaretçi Güncelle</button>
+</form>
