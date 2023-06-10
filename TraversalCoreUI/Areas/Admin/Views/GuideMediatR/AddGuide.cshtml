@@ -1,0 +1,17 @@
+﻿@model TraversalCoreUI.CQRS.Commands.GuideCommands.CreateGuideCommand
+@{
+    ViewData["Title"] = "AddGuide";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Rehber Ekleme Sayfası</h2>
+
+<form method="post">
+    @Html.Label("Rehber Adı")
+    @Html.TextBoxFor(x => x.Name , new{@class = "form-control"})
+    <br /> 
+    @Html.Label("Rehber Açıklaması")
+    @Html.TextBoxFor(x => x.Description , new{@class = "form-control"})
+    <br />
+    <button class="btn btn-outline-info">Rehberi Kaydet</button>
+</form>

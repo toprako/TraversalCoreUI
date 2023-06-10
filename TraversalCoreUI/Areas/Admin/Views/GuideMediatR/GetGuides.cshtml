@@ -1,0 +1,19 @@
+﻿@model TraversalCoreUI.CQRS.Results.GuideResults.GetGuideByIdQueryResult
+@{
+    ViewData["Title"] = "GetGuides";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Rehner Bilgi Düzenleme Sayfası</h1>
+
+<form method="post">
+    @Html.HiddenFor(x => x.Id)
+    <br />
+    @Html.Label("Rehber Adı")
+    @Html.TextBoxFor(x => x.Name , new{@class = "form-control"})
+    <br />
+    @Html.Label("Rehber Açıklaması")
+    @Html.TextBoxFor(x => x.Description , new{@class = "form-control"})
+    <br />
+    <button class="btn btn-outline-primary">Bilgileri Güncelle</button>
+</form>

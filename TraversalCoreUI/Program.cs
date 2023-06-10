@@ -2,13 +2,26 @@ using BusinessLayer.Container;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Serilog;
+using TraversalCoreUI.CQRS.Handlers.DestinationHandlers;
 using TraversalCoreUI.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+#region MediatRsuz Kullaným Þekli
+builder.Services.AddScoped<GetAllDestinationQueryHandler>();
+builder.Services.AddScoped<GetDestinationByIdQueryHandler>();
+builder.Services.AddScoped<CreateDestinationCommadHandler>();
+builder.Services.AddScoped<RemoveDestinationCommandHandler>();
+builder.Services.AddScoped<UpdateDestinationCommandHandler>();
+#endregion
+
+#region MediatRlu Kullaným 
+builder.Services.AddMediatR(typeof(Program));
+#endregion
 
 var logger = new LoggerConfiguration()
 .MinimumLevel.Debug()

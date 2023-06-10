@@ -1,0 +1,22 @@
+﻿@model TraversalCoreUI.CQRS.Results.DestinationResults.GetDestinationByIdQueryResult
+
+@{
+    ViewData["Title"] = "GetDestination";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Lokasyon Düzenleme Sayfası</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.DestinationId)
+    @Html.Label("Şehir")
+    @Html.TextBoxFor(x => x.City, new{@class = "form-control"})
+    <br />
+    @Html.Label("Gün-Gece")
+    @Html.TextBoxFor(x => x.DayNight, new{@class = "form-control"})
+    <br />
+    @Html.Label("Fiyat")
+    @Html.TextBoxFor(x => x.Price, new{@class = "form-control"})
+    <br />
+    <button class="btn btn-outline-success">Lokasyon Bilgilerini Güncelle</button>
+</form>

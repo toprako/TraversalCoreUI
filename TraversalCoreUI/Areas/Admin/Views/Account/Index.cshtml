@@ -1,0 +1,20 @@
+﻿@model TraversalCoreUI.Areas.Admin.Models.AccountViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Unit Of Work Personel Prim Transferi</h1>
+
+<form method="post">
+    @Html.Label("Gönderen")
+    @Html.TextBoxFor(x => x.SenderId , new{@class = "form-control"})
+    <br />
+    @Html.Label("Alıcı")
+    @Html.TextBoxFor(x => x.ReceiverId , new{@class = "form-control"})
+    <br />
+    @Html.Label("Miktar")
+    @Html.TextBoxFor(x => x.Amount , new{@class = "form-control", @type="number"})
+    <br />
+    <button class="btn btn-outline-warning">Hesaba Aktar</button>
+</form>

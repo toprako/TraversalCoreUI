@@ -1,0 +1,24 @@
+﻿@model TraversalCoreUI.CQRS.Commands.DestinationCommands.CreateDestinationCommad
+
+@{
+    ViewData["Title"] = "AddDestination";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Tur Rotası Ekleme Sayfası(CQRS)</h1>
+
+<form method="post">
+    @Html.Label("Şehir Adı")
+    @Html.TextBoxFor(x => x.City , new{@class = "form-control"})
+    <br />
+    @Html.Label("Gün-Gece Sayısı")
+    @Html.TextBoxFor(x => x.DayNight , new{@class = "form-control"})
+    <br />
+    @Html.Label("Fiyat")
+    @Html.TextBoxFor(x => x.Price , new{@class = "form-control"})
+    <br />
+    @Html.Label("Kapasite")
+    @Html.TextBoxFor(x => x.Capacity , new{@class = "form-control"})
+    <br />
+    <button class="btn btn-outline-primary">Tur Rotası Kaydet</button>
+</form>
