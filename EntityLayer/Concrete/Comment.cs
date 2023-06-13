@@ -17,5 +17,7 @@ namespace EntityLayer.Concrete
         public bool State { get; set; }
         public int DestinationID { get; set; }
         public Destination Destination { get; set; }
+        public Guid AppUserID { get; set; }
+        public AppUser AppUser { get; set; }
     }
 }

@@ -9,7 +9,8 @@ namespace TraversalCoreUI.ViewComponents.Comment
         readonly CommentManager commentManager = new(new EfCommentDal());
         public IViewComponentResult Invoke(int Id)
         {
-            var filterData = commentManager.TGetDestinationById(Id);
+            var filterData = commentManager.TGetListCommentWithDestinationAndUser(Id);
+
             return View(filterData);
         }
     }
