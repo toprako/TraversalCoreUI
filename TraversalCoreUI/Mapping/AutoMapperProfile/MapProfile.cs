@@ -2,6 +2,7 @@
 using DTOLayer.DTOs.AnnouncementDTOs;
 using DTOLayer.DTOs.AppUserDTOs;
 using DTOLayer.DTOs.CityDTOs;
+using DTOLayer.DTOs.ContactDTOs;
 using EntityLayer.Concrete;
 
 namespace TraversalCoreUI.Mapping.AutoMapperProfile
@@ -10,6 +11,7 @@ namespace TraversalCoreUI.Mapping.AutoMapperProfile
     {
         public MapProfile()
         {
+            //Dtoları Maplemek için kullanılır
             CreateMap<AnnouncementAddDto, Announcement>();
             CreateMap<Announcement, AnnouncementAddDto>();
 
@@ -23,7 +25,9 @@ namespace TraversalCoreUI.Mapping.AutoMapperProfile
             CreateMap<Announcement, AnnouncementListDto>();
 
             CreateMap<AnnouncementUpdateDto, Announcement>();
-            CreateMap<Announcement, AnnouncementUpdateDto>(); 
+            CreateMap<Announcement, AnnouncementUpdateDto>();
+
+            CreateMap<SendMessageDto, ContactUs>().ReverseMap();
         }
     }
 }

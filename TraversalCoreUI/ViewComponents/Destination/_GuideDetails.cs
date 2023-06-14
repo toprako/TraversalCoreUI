@@ -13,7 +13,7 @@ namespace TraversalCoreUI.ViewComponents.Destination
         }
         public IViewComponentResult Invoke(int Id)
         {
-            var values = _guideService.TGetByID(1);
+            var values = _guideService.TGetByID(Id);
             values.Image = values.Image ?? "";
             return View(values);    
         }
