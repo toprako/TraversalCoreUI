@@ -1,0 +1,23 @@
+﻿@using TraversalCoreUI.Areas.Admin.Models;
+@model List<RoleAssignViewModel>
+
+@{
+    ViewData["Title"] = "AssignRole";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Rol Atama Sayfası</h1>
+
+<form method="post">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <div class="form-check">
+            @Html.HiddenFor(x => x[i].RoleId)
+            @Html.HiddenFor(x => x[i].RoleName)
+            @Html.CheckBoxFor(x => x[i].RoleExist,new{@class="form-check-input" ,@type="checkbox"})
+            @Html.Label(Model[i].RoleName)
+        </div>
+    }
+    <br />
+    <button class="btn btn-outline-primary">Değişiklikleri Kaydet</button>
+</form>

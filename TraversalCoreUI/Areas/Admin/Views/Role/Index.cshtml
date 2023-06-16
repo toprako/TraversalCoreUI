@@ -1,0 +1,40 @@
+﻿@using EntityLayer.Concrete;
+@model List<AppRole>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int counter = 0;
+}
+
+<h3>Rol Listesi</h3>
+@if (Model.Count > 0)
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Rol Adı</th>
+            <th>Rolü Sil</th>
+            <th>Rolü Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            counter++;
+            <tr>
+                <td>@counter</td>
+                <td>@item.Name</td>
+                <td><a href="/Admin/Role/DeleteRole/@item.Id" class="btn btn-outline-danger">Rolü Sil</a></td>
+                <td><a href="/Admin/Role/UpdateRole/@item.Id" class="btn btn-outline-success">Rolü Güncelle</a></td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <div id="container">
+        <p class="alert alert-success">Her Hangi Bir Rol Bulunamadı.</p>
+    </div>
+}
+<br />
+<a href="/Admin/Role/CreateRole/" class="btn btn-outline-primary">Yeni Rol Girişi</a>
+<a href="/Admin/Role/UserList/" class="btn btn-outline-primary">Kullanıcı Rol Atamaları</a>

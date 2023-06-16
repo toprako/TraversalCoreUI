@@ -1,0 +1,17 @@
+﻿@using TraversalCoreUI.Areas.Admin.Models;
+@model UpdateRoleViewModel
+
+@{
+    ViewData["Title"] = "UpdateRole";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Rol Düzenleme Sayfası</h1>
+
+<form method="post">
+    @Html.HiddenFor(x => x.RoleId)
+    @Html.Label("Rol Adı")
+    @Html.TextBoxFor(x => x.RoleName , new{@class="form-control"})
+    <br />
+    <button class="btn btn-outline-success">Rolü Güncelle</button>
+</form>

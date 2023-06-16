@@ -30,13 +30,14 @@ var logger = new LoggerConfiguration()
 .CreateLogger();
 builder.Logging.ClearProviders();
 builder.Logging.AddSerilog(logger);
-
+builder.Services.AddControllers();
 builder.Services.AddLogging(x =>
 {
     x.ClearProviders();
     x.SetMinimumLevel(LogLevel.Debug);
     x.AddDebug();
 });
+
 builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>();
@@ -45,7 +46,7 @@ builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Contex
 builder.Services.ContainerDependencies();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.CustomValidator();
-builder.Services.AddControllersWithViews().AddFluentValidation(); 
+
 builder.Services.AddMvc(config =>
 {
     var policy = new AuthorizationPolicyBuilder()
@@ -53,9 +54,12 @@ builder.Services.AddMvc(config =>
     .Build();
     config.Filters.Add(new AuthorizeFilter(policy));
 });
-
 builder.Services.AddMvc();
-
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Login/SignIn/";
+});
+builder.Services.AddFluentValidationAutoValidation();
 var app = builder.Build();
 
 
